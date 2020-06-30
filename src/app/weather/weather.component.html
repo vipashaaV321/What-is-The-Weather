@@ -1,0 +1,138 @@
+<div class="w3-row w3-padding-64" id="about">
+  
+
+  <div class="w3-col m6 w3-padding-large">
+    <br>
+    <h3 class="w3-center"><b>What's the weather!?</b></h3><br>
+    <h5 class="w3-center"><b>You can find the weather of your city!!</b><br><br>
+       eg: Ahmedabad,Vadodara,New york,Surat,Delhi,Mumbai,London,Paris & many more</h5>
+   <br>
+    <p class="w3-large w3-text-grey  w3-center">Just type the city name and you will get all the weather information about the location.</p>
+  </div>
+  <div class="w3-col m6 w3-padding-large w3-center">
+    <img src="assets/dribbble.gif" class="w3-round w3-image" alt="Table Setting" width="400" height="400">
+   </div>
+</div>
+
+<br>
+
+<h1 class="w3-xxlarge w3-center w3-hide-small"><b>What's the Weather!? </b></h1>
+<h3 class="w3-center w3-hide-large w3-hide-medium"><b>What's the Weather!? </b></h3>
+  <div class="w3-container w3-center w3-padding-32">
+      <button class="btn w3-center w3-margin w3-card w3-padding" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"  style="background-color: rgb(252, 120, 120);color: #fff;">
+        <i class="fa fa-search"></i>  Check Weather here
+      </button>
+      <div class="collapse w3-container w3-center w3-padding-32" id="collapseExample">
+        <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+          <div class="form-group w3-center w3-margin">
+            <input
+              class="form-control"
+              type="text"
+              id="weatherLocation"
+              aria-describedby="weatherLocation"
+              placeholder="Please input a Location"
+              formControlName="location"
+            /> 
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-md w3-margin w3-card" style="background-color: rgb(252, 120, 120) ;color: #fff;" data-toggle="tooltip" data-placement="top" title="Click multiple times to submit">
+              <i class="fa fa-search"></i> Search
+            </button>
+          </div>
+        </form>
+        <br>
+        <div class="w3-container w3-padding-64 w3-center" id="team">
+          <h3>Weather Details<br> <b *ngIf="this.weatherData?.location.name"> {{this.weatherData?.location.name}}</b></h3>
+        
+          <br>
+          <div class="w3-row"><br>
+            <div class="w3-quarter">
+              <img src="assets/loc1.png" alt="Boss" style="width:130px;height: 130px;" class="w3-circle w3-hover-opacity">
+              <h4>Region</h4>
+              <h5><b>{{this.weatherData?.location.region}} {{this.weatherData?.location.country}}</b></h5>
+            </div>
+          <div class="w3-quarter">
+            <img src="assets/temp2.jpg" alt="Boss" style="width: 120px;height: 120px;margin-bottom: 6px;" class="w3-circle w3-hover-opacity">
+            <br>
+            
+            <h4>Temperature (C)</h4>
+            <h5><b>{{this.weatherData?.current.temperature}} </b></h5>
+            
+          </div>
+          
+       
+          
+         
+          
+          <div class="w3-quarter">
+            <img src="assets/lati.png" alt="Boss" style="width: 130px;height: 130px;" class="w3-circle w3-hover-opacity">
+            <h4>Latitude</h4>
+            <h5><b>{{this.weatherData?.location.lat}}</b></h5>
+          </div>
+          <div class="w3-quarter">
+            <img src="assets/longi.jpg" alt="Boss" style="width: 130px;height: 130px;" class="w3-circle w3-hover-opacity">
+            <h4>Longitude</h4>
+            <h5><b>{{this.weatherData?.location.lon}}</b></h5>
+          </div>
+          </div>
+<br>
+          <div class="w3-row"><br>
+          <div class="w3-quarter">
+            <img src="assets/pr.png" alt="Boss" style="width: 130px;height: 130px;border: 3px solid rgb(71, 71, 71);" class="w3-circle w3-hover-opacity">
+            <h4>Pressure(in hpa)</h4>
+          <h5><b> {{this.weatherData?.current.pressure}}</b></h5>
+          </div>
+          <div class="w3-quarter">
+            <img src="assets/cl.jpg" alt="Boss" style="width: 130px;height: 130px;" class="w3-circle w3-hover-opacity">
+            <h4>cloudcover (in %)</h4>
+         <h5><b>{{this.weatherData?.current.cloudcover}}</b>      </h5>
+          </div>
+          <div class="w3-quarter">
+            <img src="assets/uv.png" alt="Boss" style="width: 130px;height: 130px;" class="w3-circle w3-hover-opacity">
+            <h4>UV Index</h4>
+         <h5> <b>{{this.weatherData?.current.uv_index}}</b></h5>
+          </div>
+          <div class="w3-quarter">
+            <img src="assets/vis.jpg" alt="Boss" style="width: 130px;height: 130px;" class="w3-circle w3-hover-opacity">
+            <h4>Visibility (km)</h4>
+         <h5><b>{{this.weatherData?.current.visibility}}</b> </h5>
+          </div>
+          </div>
+<br>
+          <div class="w3-row">
+            <br>
+            <div class="w3-quarter">
+              <img src="assets/rain.jpg" alt="Boss" style="width: 130px;height: 130px;border: 3px solid rgb(98, 172, 241);" class="w3-circle w3-hover-opacity">
+              <h4>Precipitation</h4>
+            <h5><b>{{this.weatherData?.current.precip}}</b> </h5>
+            </div>
+            <div class="w3-quarter">
+              <img src="assets/wind.jpg" alt="Boss" style="width: 130px;height: 130px" class="w3-circle w3-hover-opacity">
+              <h4>Wind Speed(km/hr)</h4>
+            <h5> <b>{{this.weatherData?.current.wind_speed}}</b></h5>
+            </div>
+            <div class="w3-quarter">
+              <img src="assets/windd.jpg" alt="Boss" style="width: 130px;height: 130px" class="w3-circle w3-hover-opacity">
+              <h4>Wind Degree</h4>
+            <h5><b> {{this.weatherData?.current.wind_degree}}</b></h5>
+            </div>
+            <div class="w3-quarter">
+              <img src="assets/hum.jpg" alt="Boss" style="width: 130px;height: 130px" class="w3-circle w3-hover-opacity">
+              <h4>Humidity</h4>
+            <h5><b>{{this.weatherData?.current.humidity}}</b> </h5>
+            </div>
+            </div>
+            <br>
+            <div class="w3-row">
+              <br>
+              <div class="w3-quarter" *ngIf="this.weatherData?.current.weather_icons">
+                <img [src]="this.weatherData?.current.weather_icons" style="width: 130px;height: 130px;" class="w3-circle w3-hover-opacity">
+                <h4>Weather Condition</h4>
+                <h5><b>{{this.weatherData?.current.weather_descriptions}}</b></h5>
+              </div>
+         
+            </div>
+          </div>
+          </div>
+
+   
