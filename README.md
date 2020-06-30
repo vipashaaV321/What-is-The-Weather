@@ -1,4 +1,4 @@
-# WeatherDetectorapp
+# WeatherDetectorApp
 ![output](https://github.com/vipashaaV321/What-is-The-Weather/blob/master/Screenshot%20(866).png)
 ![output](https://github.com/vipashaaV321/What-is-The-Weather/blob/master/Screenshot%20(867).png)
 ![output](https://github.com/vipashaaV321/What-is-The-Weather/blob/master/Screenshot%20(869).png)
