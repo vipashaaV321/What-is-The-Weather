@@ -1,5 +1,5 @@
 # Weatherapp
-![output](/Screenshot865.png)
+![output](/https://github.com/vipashaaV321/What-is-The-Weather/blob/master/Screenshot%20(865).png)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 output :: https://vipashaav321.github.io/What-is-The-Weather/
